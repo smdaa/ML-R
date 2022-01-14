@@ -66,7 +66,7 @@ for (i in 1:K) {
   endtest   = min(nrow(data), i*ntest)
   
   datatest = datasuffle[starttest:endtest,]
-  datapp   = data[setdiff(1:nrow(data), starttest:endtest),]
+  datapp   = datasuffle[setdiff(1:nrow(data), starttest:endtest),]
   
   lm.outBIC = lm(formula(lm.outBIC), datapp)
   lm.outintBIC = lm(formula(lm.outintBIC), datapp)
